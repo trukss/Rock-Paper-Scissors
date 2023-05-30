@@ -1,29 +1,29 @@
 function getComputerChoice() {
   let aleatorio = Math.floor(Math.random() * 3);
   if (aleatorio === 0) {
-    return "Rock"
+    return "ROCK"
   } else if (aleatorio === 1) {
-    return "Paper"
+    return "PAPER"
   } else if (aleatorio === 2) {
-    return "Scissors"
+    return "SCISSORS"
   }
 }
-const playerSelection = ""
-const computerSelection = getComputerChoice()
+const playerSelection = "RocK".toUpperCase();
+const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == "Rock" && computerSelection == "Paper") {
-    return "Voce perde!, paper vence de Rock";
-  } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-    return "Voce perde!, Scissors vence de paper";
-  } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-    return "Voce perde!, Rock vence de Scissors";
-  } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-    return "Voce ganha!, Paper vence de Rock";
-  } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-    return "Voce ganha!, Scissors ganhar de Paper";
-  } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-    return "Voce ganha!, Rock ganha de Scisosrs"
+  if (playerSelection == "ROCK" && computerSelection == "PAPER") {
+    return "Voce perde!, paper vence de rock";
+  } else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
+    return "Voce perde!, scissors vence de paper";
+  } else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
+    return "Voce perde!, rock vence de scissors";
+  } else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
+    return "Voce ganha!, paper vence de rock";
+  } else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
+    return "Voce ganha!, scissors ganhar de paper";
+  } else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
+    return "Voce ganha!, rock ganha de scisosrs"
   } else {
     return "E um empate";
   }

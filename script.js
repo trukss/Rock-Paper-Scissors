@@ -1,3 +1,8 @@
+
+let playerSelection;
+let computerSelection;
+
+
 function getComputerChoice() {
   let aleatorio = Math.floor(Math.random() * 3);
   if (aleatorio === 0) {
@@ -8,8 +13,7 @@ function getComputerChoice() {
     return "SCISSORS"
   }
 }
-const playerSelection = "RocK".toUpperCase();
-const computerSelection = getComputerChoice();
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == "ROCK" && computerSelection == "PAPER") {
@@ -28,3 +32,15 @@ function playRound(playerSelection, computerSelection) {
     return "E um empate";
   }
 }
+
+function game() {
+
+  for (let i = 0; i < 5; i++) {
+    computerSelection = getComputerChoice();
+    playerSelection = prompt("Escolha entre Rock, paper or scissors");
+    console.log(playRound(playerSelection.toUpperCase(), computerSelection));
+    
+  }
+
+}
+

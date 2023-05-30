@@ -28,8 +28,10 @@ function playRound(playerSelection, computerSelection) {
     return "Voce ganha!, scissors ganhar de paper";
   } else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
     return "Voce ganha!, rock ganha de scisosrs"
+  } else if (playerSelection == computerSelection) {
+    return "É um empate";
   } else {
-    return "E um empate";
+    return "Valor invalido"
   }
 }
 
@@ -39,7 +41,7 @@ function game() {
     computerSelection = getComputerChoice();
     playerSelection = prompt("Escolha entre Rock, paper or scissors");
     console.log(playRound(playerSelection.toUpperCase(), computerSelection));
-    
+
   }
 
 }

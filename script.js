@@ -42,9 +42,14 @@ function game() {
     computerSelection = getComputerChoice();
     playerSelection = prompt("Escolha entre Rock, paper or scissors");
     console.log(playRound(playerSelection.toUpperCase(), computerSelection));
-    if (playRound(playerSelection, computerSelection) === "Voce perde!, paper vence de rock" || playRound(playerSelection, computerSelection) === "Voce perde!, scissors vence de paper" || "Voce perde!, rock vence de scissors") {
+    getScore()
+
+  }
+
+  function getScore() {
+    if (playRound(playerSelection, computerSelection) === "Voce perde!, paper vence de rock" || playRound(playerSelection, computerSelection) === "Voce perde!, scissors vence de paper" || (playRound(playerSelection, computerSelection) === "Voce perde!, rock vence de scissors")) {
       computerScore = computerScore++
-    } else if (playRound(playerSelection, computerSelection) === "Voce ganha!, paper vence de rock" || "Voce ganha!, scissors ganhar de paper" || "Voce ganha!, scissors ganhar de paper") {
+    } else if (playRound(playerSelection, computerSelection) === "Voce ganha!, paper vence de rock" || "Voce ganha!, scissors ganhar de paper" || (playRound(playerSelection, computerSelection)) === "Voce ganha!, scissors ganhar de paper") {
       playerScore = playerScore++
     } else {
 
@@ -52,6 +57,10 @@ function game() {
     console.log(playerScore)
     console.log(computerScore)
   }
+
+
+
+
   if (playerScore > computerScore) {
     console.log(`Parabens voce ganhou com ${playerScore} pontos`)
   } else if (playerScore === computerScore) {

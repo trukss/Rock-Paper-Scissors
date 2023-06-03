@@ -47,7 +47,7 @@ function game() {
 
 
   function getScore() {
-    let result = playRound(playerSelection, computerSelection);
+    let result = playRound(playerSelection.toUpperCase(), computerSelection);
     if (
       result === "Voce perde! paper vence de rock" ||
       result === "Voce perde! scissors vence de paper" ||

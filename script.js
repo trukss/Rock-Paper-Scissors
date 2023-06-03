@@ -18,17 +18,17 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == "ROCK" && computerSelection == "PAPER") {
-    return "Voce perde!, paper vence de rock";
+    return "Voce perde! paper vence de rock";
   } else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
-    return "Voce perde!, scissors vence de paper";
+    return "Voce perde! scissors vence de paper";
   } else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
-    return "Voce perde!, rock vence de scissors";
+    return "Voce perde! rock vence de scissors";
   } else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
-    return "Voce ganha!, paper vence de rock";
+    return "Voce ganha! paper vence de rock";
   } else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
-    return "Voce ganha!, scissors ganhar de paper";
+    return "Voce ganha! scissors vence de paper";
   } else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
-    return "Voce ganha!, rock ganha de scisosrs";
+    return "Voce ganha! rock vence de scissors";
   } else if (playerSelection == computerSelection) {
     return "É um empate";
   } else {
@@ -43,20 +43,29 @@ function game() {
     playerSelection = prompt("Escolha entre Rock, paper or scissors");
     console.log(playRound(playerSelection.toUpperCase(), computerSelection));
     getScore()
-
   }
+
 
   function getScore() {
-    if (playRound(playerSelection, computerSelection) === "Voce perde!, paper vence de rock" || playRound(playerSelection, computerSelection) === "Voce perde!, scissors vence de paper" || (playRound(playerSelection, computerSelection) === "Voce perde!, rock vence de scissors")) {
-      computerScore = computerScore++
-    } else if (playRound(playerSelection, computerSelection) === "Voce ganha!, paper vence de rock" || "Voce ganha!, scissors ganhar de paper" || (playRound(playerSelection, computerSelection)) === "Voce ganha!, scissors ganhar de paper") {
-      playerScore = playerScore++
-    } else {
-
+    let result = playRound(playerSelection, computerSelection);
+    if (
+      result === "Voce perde! paper vence de rock" ||
+      result === "Voce perde! scissors vence de paper" ||
+      result === "Voce perde! rock vence de scissors"
+    ) {
+      computerScore++;
+    } else if (
+      result === "Voce ganha! paper vence de rock" ||
+      result === "Voce ganha! scissors vence de paper" ||
+      result === "Voce ganha! rock vence de scissors"
+    ) {
+      playerScore++;
     }
-    console.log(playerScore)
-    console.log(computerScore)
+    console.log("Player Score:", playerScore);
+    console.log("Computer Score:", computerScore);
+
   }
+
 
 
 
@@ -64,9 +73,9 @@ function game() {
   if (playerScore > computerScore) {
     console.log(`Parabens voce ganhou com ${playerScore} pontos`)
   } else if (playerScore === computerScore) {
-    console.log("Infelismente houve um empate")
+    console.log("Infelizmente houve um empate")
   } else {
-    console.log(`Infelismente o computador ganhou com ${computerScore} pontos`)
+    console.log(`Infelizmente o computador ganhou com ${computerScore} pontos`)
   }
 
 
